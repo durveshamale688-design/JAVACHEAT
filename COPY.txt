@@ -1,0 +1,513 @@
+Practice Questions
+
+1.	Create a class Laptop with private fields brand and price. Write a constructor that initializes both fields. Write getter methods for both. Write a method displaySpecs() that prints the brand and price. In main, create one Laptop object and call displaySpecs().
+
+CODE:
+class Laptop {
+    // Private fields
+    private String brand;
+    private double price;
+
+    // Constructor
+    public Laptop(String brand, double price) {
+        this.brand = brand;
+        this.price = price;
+    }
+
+    // Getter methods
+    public String getBrand() {
+        return brand;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Method to display specs
+    public void displaySpecs() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Price: " + price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create Laptop object
+        Laptop laptop1 = new Laptop("Dell", 65000);
+
+        // Call method
+        laptop1.displaySpecs();
+    }
+}
+
+
+
+2.	Design a class Mobile having two private attributes: modelName and batteryLife. Use a constructor with parameters and the this keyword to assign values. Provide methods to get each attribute and a method to print all details. Test the class by creating an object in main.
+CODE:
+class Mobile {
+    // Private attributes
+    private String modelName;
+    private int batteryLife;
+
+    // Constructor using 'this' keyword
+    public Mobile(String modelName, int batteryLife) {
+        this.modelName = modelName;
+        this.batteryLife = batteryLife;
+    }
+
+    // Getter methods
+    public String getModelName() {
+        return modelName;
+    }
+
+    public int getBatteryLife() {
+        return batteryLife;
+    }
+
+    // Method to print all details
+    public void displayDetails() {
+        System.out.println("Model Name: " + modelName);
+        System.out.println("Battery Life: " + batteryLife + " hours");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create object
+        Mobile mobile1 = new Mobile("Samsung Galaxy M34", 24);
+
+        // Call method
+        mobile1.displayDetails();
+    }
+}
+3. Write a class Television with private variables screenSize and type. The constructor should take values for both and use this. Add getters and a method showDetails(). In main, create one Television object and show its details. 
+CODE:
+class Television {
+    // Private variables
+    private int screenSize;
+    private String type;
+
+    // Constructor using 'this'
+    public Television(int screenSize, String type) {
+        this.screenSize = screenSize;
+        this.type = type;
+    }
+
+    // Getter methods
+    public int getScreenSize() {
+        return screenSize;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    // Method to show details
+    public void showDetails() {
+        System.out.println("Screen Size: " + screenSize + " inches");
+        System.out.println("Type: " + type);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create Television object
+        Television tv1 = new Television(55, "LED");
+
+        // Display details
+        tv1.showDetails();
+    }
+}
+4. Build a class Fan that contains private data members speed and color. The constructor must assign values using this. Write a method describe() that prints both values. In main, instantiate the class and call describe().
+CODE:
+class Fan {
+    // Private data members
+    private int speed;
+    private String color;
+
+    // Constructor using 'this'
+    public Fan(int speed, String color) {
+        this.speed = speed;
+        this.color = color;
+    }
+
+    // Method to describe fan
+    public void describe() {
+        System.out.println("Speed: " + speed);
+        System.out.println("Color: " + color);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create Fan object
+        Fan fan1 = new Fan(3, "White");
+
+        // Call method
+        fan1.describe();
+    }
+}
+5. Create a class Bottle with private fields capacity and material. Write a constructor that uses this to resolve naming conflicts. Add getters and a method info(). In main, create one Bottle object and print its information.
+CODE:
+class Bottle {
+    // Private fields
+    private int capacity;
+    private String material;
+
+    // Constructor using 'this' to resolve naming conflict
+    public Bottle(int capacity, String material) {
+        this.capacity = capacity;
+        this.material = material;
+    }
+
+    // Getter methods
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    // Method to display information
+    public void info() {
+        System.out.println("Capacity: " + capacity + " ml");
+        System.out.println("Material: " + material);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create Bottle object
+        Bottle bottle1 = new Bottle(1000, "Steel");
+
+        // Print information
+        bottle1.info();
+    }
+}
+
+6. Write a Java program using a for loop to print all odd numbers from 1 to 10.
+CODE: 
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i += 2) {
+            System.out.println(i);
+        }
+    }
+}
+
+7. Write a program that uses a do-while loop to print numbers from 10 down to 1.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+        int i = 10;
+
+        do {
+            System.out.println(i);
+            i--;
+        } while (i >= 1);
+    }
+}
+8. Write a Java program that takes a number from the user and prints its multiplication table from 1 to 10 using a for loop.
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take input from user
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        // Print multiplication table
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+
+        sc.close();
+    }
+}
+9. Write a program that keeps asking the user to enter a positive number until they do. Use a while loop for this.
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+
+        // Ask user until a positive number is entered
+        System.out.print("Enter a positive number: ");
+        num = sc.nextInt();
+
+        while (num <= 0) {
+            System.out.print("Invalid! Please enter a positive number: ");
+            num = sc.nextInt();
+        }
+
+        System.out.println("You entered a valid positive number: " + num);
+
+        sc.close();
+    }
+}
+10. Write a Java program to find the factorial of a number entered by the user using a for loop. Factorial of 5 is 5×4×3×2×1 = 120.
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take input
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int factorial = 1;
+
+        // Calculate factorial
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        // Print result
+        System.out.println("Factorial of " + num + " is: " + factorial);
+
+        sc.close();
+    }
+}
+11. Write a Java program that converts a float value 55.75 into an int and prints both. Also show automatic conversion from char to int.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+
+        // Float to int (Explicit casting)
+        float f = 55.75f;
+        int i = (int) f;
+
+        System.out.println("Float value: " + f);
+        System.out.println("Converted int value: " + i);
+
+        // Char to int (Automatic conversion)
+        char ch = 'A';
+        int ascii = ch;
+
+        System.out.println("Character: " + ch);
+        System.out.println("ASCII value (int): " + ascii);
+    }
+}
+12. Take a long value 1000 and convert it into an int explicitly. Print both values. Also show how a byte value automatically fits into a short variable.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+
+        // Long to int (Explicit casting)
+        long longValue = 1000;
+        int intValue = (int) longValue;
+
+        System.out.println("Long value: " + longValue);
+        System.out.println("Converted int value: " + intValue);
+
+        // Byte to short (Automatic conversion)
+        byte byteValue = 50;
+        short shortValue = byteValue;
+
+        System.out.println("Byte value: " + byteValue);
+        System.out.println("Converted short value: " + shortValue);
+    }
+}
+13. Write a program that demonstrates converting a double 45.67 to an int (data loss happens). Also show how an int automatically becomes a long.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+
+        // Double to int (Explicit casting - data loss)
+        double d = 45.67;
+        int i = (int) d;
+
+        System.out.println("Double value: " + d);
+        System.out.println("Converted int value: " + i);
+
+        // Int to long (Automatic conversion)
+        int intValue = 100;
+        long longValue = intValue;
+
+        System.out.println("Int value: " + intValue);
+        System.out.println("Converted long value: " + longValue);
+    }
+}
+14. Convert the value 3.14159 from double to float using explicit casting. Print both. Also show automatic conversion from int to double.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+
+        // Double to float (Explicit casting)
+        double d = 3.14159;
+        float f = (float) d;
+
+        System.out.println("Double value: " + d);
+        System.out.println("Converted float value: " + f);
+
+        // Int to double (Automatic conversion)
+        int intValue = 10;
+        double doubleValue = intValue;
+
+        System.out.println("Int value: " + intValue);
+        System.out.println("Converted double value: " + doubleValue);
+    }
+}
+15. Write a program that shows what happens when you convert a large int (like 300) into a byte. Print the original and the converted value.
+CODE:
+public class Main {
+    public static void main(String[] args) {
+
+        // Large int value
+        int num = 300;
+
+        // Convert int to byte (Explicit casting)
+        byte b = (byte) num;
+
+        System.out.println("Original int value: " + num);
+        System.out.println("Converted byte value: " + b);
+    }
+}
+16. Write a Java program that takes two numbers from the user and divides them. Use try-catch to handle the situation when the user enters zero as the second number. Print "Invalid denominator" in the catch block.
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Take input
+            System.out.print("Enter first number: ");
+            int a = sc.nextInt();
+
+            System.out.print("Enter second number: ");
+            int b = sc.nextInt();
+
+            // Perform division
+            int result = a / b;
+
+            System.out.println("Result: " + result);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Invalid denominator");
+        }
+
+        sc.close();
+    }
+}
+17. Create a program that asks the user to enter an array index. Access an element from an array of size 5. Use try-catch to handle ArrayIndexOutOfBoundsException and print "Index out of range".
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Array of size 5
+        int[] arr = {10, 20, 30, 40, 50};
+
+        try {
+            // Ask user for index
+            System.out.print("Enter array index (0 to 4): ");
+            int index = sc.nextInt();
+
+            // Access element
+            System.out.println("Element at index " + index + " is: " + arr[index]);
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index out of range");
+        }
+
+        sc.close();
+    }
+}
+18. Write a program that converts a string to an integer using Integer.parseInt(). Use try-catch to handle NumberFormatException if the user enters something that is not a number. Print "Invalid number format".
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Take input as string
+            System.out.print("Enter a number: ");
+            String input = sc.nextLine();
+
+            // Convert string to integer
+            int num = Integer.parseInt(input);
+
+            System.out.println("Converted number: " + num);
+        } 
+        catch (NumberFormatException e) {
+            System.out.println("Invalid number format");
+        }
+
+        sc.close();
+    }
+}
+19. Take two numbers from the user. If the second number is zero, throw an ArithmeticException manually using the throw keyword and catch it to print "Cannot divide by zero".
+CODE:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Take input as string
+            System.out.print("Enter a number: ");
+            String input = sc.nextLine();
+
+            // Convert string to integer
+            int num = Integer.parseInt(input);
+
+            System.out.println("Converted number: " + num);
+        } 
+        catch (NumberFormatException e) {
+            System.out.println("Invalid number format");
+        }
+
+        sc.close();
+    }
+}
+
+20. Write a program that reads a number from the user. If the number is negative, create and throw a custom exception called NegativeNumberException (just declare this exception class). Catch it and print "Negative numbers not allowed".
+CODE:
+import java.util.Scanner;
+
+// Custom Exception Class
+class NegativeNumberException extends Exception {
+    public NegativeNumberException(String message) {
+        super(message);
+    }
+}
+
+public class NegativeNumberTest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter a number: ");
+            int num = sc.nextInt();
+
+            // Check for negative number
+            if (num < 0) {
+                throw new NegativeNumberException("Negative numbers not allowed");
+            }
+
+            System.out.println("You entered: " + num);
+
+        } catch (NegativeNumberException e) {
+            System.out.println("Negative numbers not allowed");
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        }
+
+        sc.close();
+    }
+}
